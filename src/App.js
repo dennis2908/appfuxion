@@ -16,7 +16,7 @@ function App() {
       <FormControl style={{ height: "50px", lineHeight: "200%" }}>
         <Autocomplete
           apiKey="AIzaSyDSKsr1WK1DcCmD49tsJ1nZMgKT8RJC9EE"
-          style={{ width: "400px", height: "100px", marginBottom: "5px", marginTop: "5px" }}
+          style={{ width: "400px", height: 100, marginBottom: "5px", marginTop: "5px" }}
           onPlaceSelected={(place) => {
            store.dispatch({ type: 'CHANGE_STATE', payload: { place: place } })
           }}
