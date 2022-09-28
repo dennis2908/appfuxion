@@ -5,17 +5,17 @@ import FormControl from '@mui/material/FormControl';
 
 import Autocomplete from "react-google-autocomplete";
 
-import Mdm from "./Mdm";
+import Mdm from "./components/Mdm";
 
 
 function App() {
-
+console.log(121212,process.env.REACT_APP_API_KEY)
   return (
 
     <div className="App">
       <FormControl style={{ height: "50px", lineHeight: "200%" }}>
         <Autocomplete
-          apiKey="AIzaSyDSKsr1WK1DcCmD49tsJ1nZMgKT8RJC9EE"
+          apiKey={process.env.REACT_APP_API_KEY}
           style={{ width: "400px", height: 100, marginBottom: "5px", marginTop: "5px" }}
           onPlaceSelected={(place) => {
            store.dispatch({ type: 'CHANGE_STATE', payload: { place: place } })

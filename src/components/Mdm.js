@@ -1,5 +1,5 @@
-import './App.css';
-import { store } from './redux/store'
+import '../App.css';
+import { store } from '../redux/store'
 
 import React, { useState, useEffect } from 'react';
 import Table from '@mui/material/Table';
@@ -10,7 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import Genfunction from "./function/Genfunction";
+import Genfunction from "../function/Genfunction";
 
 
 

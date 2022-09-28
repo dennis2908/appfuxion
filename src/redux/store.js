@@ -1,4 +1,11 @@
-import { legacy_createStore } from "redux";
+import { legacy_createStore, applyMiddleware } from "redux";
+
+import { saga } from "./saga"
+
+import createSagaMiddleware from 'redux-saga'
+
+
+const sagaMiddleware = createSagaMiddleware()
 
 const initialState = {
 	place: []
@@ -20,12 +27,8 @@ const loadFromLocalStorage = (state = initialState, action) => {
 	try {
 
 		const serialisedState = localStorage.getItem("persistantState");
-		if (serialisedState === "undefined" || serialisedState === "null")
-			localStorage.setItem("persistantState", [])
-		else {
-			if (serialisedState !== "")
-				state = JSON.parse(serialisedState)
-		}
+		if (serialisedState !== "")
+			state = JSON.parse(serialisedState)
 
 
 		if (action.type === "CHANGE_STATE") {
@@ -48,7 +51,10 @@ const loadFromLocalStorage = (state = initialState, action) => {
 
 // create our store from our rootReducers and use loadFromLocalStorage
 // to overwrite any values that we already have saved
-const store = legacy_createStore(loadFromLocalStorage);
+const store = legacy_createStore(loadFromLocalStorage, applyMiddleware(sagaMiddleware));
+
+
+sagaMiddleware.run(saga)
 
 // listen for store changes and use saveToLocalStorage to
 // save them to localStorage
