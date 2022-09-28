@@ -4,6 +4,8 @@
 
 ## React Versi : 18.2
 
-menggunakan yarn install <br>'
+menggunakan yarn install <br>
+
+maaf judul table dengan bhs inggris <br>
 
 ## https://appfuxion.herokuapp.com/
