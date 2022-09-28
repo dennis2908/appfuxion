@@ -1,5 +1,3 @@
-Menggunakan yarn install <br>
-
 Maaf judul table dengan bhs inggris <br>
 
 Browser : chrome <br>
