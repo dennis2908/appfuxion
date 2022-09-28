@@ -1,5 +1,7 @@
 Maaf judul table dengan bhs inggris <br>
 
+Menggunakan yarn install <br>
+
 Browser : chrome versi 105.0.5195.127<br>
 
 NPM Versi : 6.14.10 <br>
